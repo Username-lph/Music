@@ -1,0 +1,140 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+ul li{
+    list-style:none;
+}
+$d-list:320px,360px,375px,384px,412px,414px,510px,600px,640px,768px,800px,1600px,1440px;
+html{
+    font-size:100px;
+}
+body{
+    font-size:16px;
+//  background-image:url(../images/todo.jpg);
+    background:#fff;
+    font-family:"微软雅黑"；
+}
+$design-size:750px;
+@each $w in $d-list{
+    @media screen and (min-width:#{$w}) {
+        html{
+            font-size:100px * $w / $design-size;
+        }
+    }
+}
+@mixin top-bottom{
+    position:absolute;
+    top:0rem;
+    bottom:0rem;
+    margin:auto;
+}
+@mixin center{
+    position:absolute;
+    top:0rem;
+    bottom:0rem;
+    left:0rem;
+    right:0rem;
+    margin:auto;
+}
+@mixin whb($width,$height,$background){
+    width:$width;
+    height:$height;
+    background:$background;
+}
+//header
+.header{
+    @include whb(100%,1rem,#ff0000);
+}
+//
+#audio{
+//  width:90%;
+    margin:0rem auto;
+    position:fixed;
+    bottom:0rem;
+}
+#play,#pause{
+    width:1.5rem;
+    padding:0.15rem 0.2rem;
+    cursor:pointer;
+}
+#play{
+    position:absolute;
+    bottom:0rem;
+    right:0rem;
+    background:#CCC;
+    text-align:center;
+}
+#mote{
+    widht:1.5rem;
+    padding:0.15rem 0.2rem;
+    position:absolute;
+    bottom:0.68rem;
+    right:0rem;
+    cursor:pointer;
+    background:#ff0000;
+}
+#time{
+    position:absolute;
+    bottom:0.8rem;
+    right:0.3rem;
+    margin:0rem 0.8rem;
+    span{
+        padding:0.1rem;
+    }
+}
+#bar{
+    position:absolute;
+    bottom:0.56rem;
+    left:0rem;
+    margin:0rem 0.3rem;
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+    #volume{
+        
+    }
+}
+#progress,#volume{
+    @include whb(3rem,0.2rem,#dfdfdf);
+    margin:0.2rem auto;
+    position:relative;
+}
+#p-i,#v-i{
+    border-radius:50%;
+    @include whb(0.4rem,0.4rem,greenyellow);
+    position:absolute;
+    cursor:pointer;
+    top:-0.1rem;
+}
+#p-i{
+    left:-0.2rem;
+}
+#v-i{
+    right:-0.2rem;
+}
+#list{
+    
+}
+#list li{
+    padding-left:15px;
+    margin:15px;
+    list-style:none;
+    cursor:pointer;
+    /*background:red;*/
+}
+/*#list li{
+    color:#383838;
+}*/
+#list li span{
+    padding:15px;
+}
+.author{
+    text-align:right;
+}
+.active{
+    color:#c00;
+} 

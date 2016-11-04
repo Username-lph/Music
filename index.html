@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width"/>
+	<!-- Add to homescreen for Safari on Ios -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="music">
+	<link rel="apple-touch-icon" href="./images/logo1.png">
+	<!-- Add to homescreen for Chrome on Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="music">
+	<meta name="theme-color" content="#2F3BA2">
+	<link rel="icon" sizes="192x192" href="./images/logo1.png">
+		<title>music</title>
+		<link rel="stylesheet" href="./css/music.css" />
+	</head>
+	<body>
+		<div class="header"></div>
+		<!--audio-->
+		<!--controls autoplay loop-->
+		<audio id="audio" src="music/黄国伦 - 直到世界都哭泣.mp3" 
+			controls
+			loop
+		></audio>
+		<div id="play">播放</div>
+		<!--<div id="pause">暂停</div>-->
+		<div id="time">
+			<span id="current-time">0:00</span>
+			<span>/</span>
+			<span id="duration">3:42</span>
+		</div>
+		
+		<div id="bar">
+			<div id="progress">
+				<div id="p-i"></div>
+			</div>
+			<div id="volume">
+				<div id="v-i"></div>
+			</div>
+		</div>
+		<div id="mote">
+			静音
+		</div>
+		<ul id="list">
+			
+		</ul>
+	</body>
+</html>
+<script type="text/javascript" scr="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--<script src="js/music.js"></script>-->
+<script type="text/javascript" src="js/musicjq.js"></script>

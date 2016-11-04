@@ -14,13 +14,13 @@ $(document).ready(function() {
 	var current = 1;
 		//列表切换歌曲
 	var music = [{
-		name: "陈小春 - 独家记忆",
-		author: "陈小春",
-		src: "music/陈小春 - 独家记忆.mp3"
+		name: "黄国伦 - 直到世界都哭泣",
+		author: "黄国伦",
+		src: "music/黄国伦 - 直到世界都哭泣.mp3"
 	}, {
-		name: '黄国伦 - 直到世界都哭泣',
-		author: '黄国伦',
-		src: 'music/黄国伦 - 直到世界都哭泣.mp3'
+		name: '陈小春 - 独家记忆',
+		author: '陈小春',
+		src: 'music/陈小春 - 独家记忆.mp3'
 	}, {
 		name: "金南玲 - 逆流成河",
 		author: "金南玲",

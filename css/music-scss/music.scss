@@ -1,29 +1,5 @@
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing:border-box;
-}
-ul li{
-    list-style:none;
-}
-$d-list:320px,360px,375px,384px,412px,414px,510px,600px,640px,768px,800px,1600px,1440px;
-html{
-    font-size:100px;
-}
-body{
-    font-size:16px;
-//  background-image:url(../images/todo.jpg);
-    background:#fff;
-    font-family:"微软雅黑"；
-}
-$design-size:750px;
-@each $w in $d-list{
-    @media screen and (min-width:#{$w}) {
-        html{
-            font-size:100px * $w / $design-size;
-        }
-    }
-}
+@import "main";
+//定义宏
 @mixin top-bottom{
     position:absolute;
     top:0rem;
@@ -43,11 +19,11 @@ $design-size:750px;
     height:$height;
     background:$background;
 }
-//header
+/*header*/
 .header{
     @include whb(100%,1rem,#ff0000);
 }
-//
+/*audio*/
 #audio{
 //  width:90%;
     margin:0rem auto;
@@ -137,4 +113,8 @@ $design-size:750px;
 }
 .active{
     color:#c00;
-} 
+}
+.pre,.next{
+    cursor:pointer;
+    margin:1rem;
+}

@@ -97,12 +97,14 @@ body {
   }
 }
 
+/*header*/
 .header {
   width: 100%;
   height: 1rem;
   background: #ff0000;
 }
 
+/*audio*/
 #audio {
   margin: 0rem auto;
   position: fixed;
@@ -204,4 +206,9 @@ body {
 
 .active {
   color: #c00;
+}
+
+.pre, .next {
+  cursor: pointer;
+  margin: 1rem;
 }

@@ -24,6 +24,15 @@
 			controls
 			loop
 		></audio>
+		<!--列表-->
+		<ul id="music-list">
+			
+		</ul>
+		<!--列表新增-->
+		<div class="song-list">
+			<div data-v='{"name":"a","src":"1","duration":"1"}'>歌曲名</div>
+			<div data-v='{"name":"a","src":"1","duration":"1"}'>歌曲名</div>
+		</div>
 		<div id="play">播放</div>
 		<!--<div id="pause">暂停</div>-->
 		<div id="time">
@@ -43,12 +52,21 @@
 		<div id="mote">
 			静音
 		</div>
-		<ul id="list">
-			
-		</ul>
+		
+		<!--上一首-->
+		<div class="pre">上一首</div>
+		<!--下一首-->
+		<div class="next">下一首</div>
+		<!--歌曲信息-->
+		<div id="info">
+			<h2>歌曲信息</h2>
+			<h3 id="name"></h3>
+			<h3 id="total"></h3>
+		</div>
 	</body>
 </html>
 <script type="text/javascript" scr="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
 <!--<script src="js/music.js"></script>-->
 <script type="text/javascript" src="js/musicjq.js"></script>
+<script type="text/javascript" src="js/totalmusic.js"></script>

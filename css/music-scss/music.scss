@@ -50,7 +50,7 @@
 }
 /*header*/
 #header{
-    @include whb(100%,1rem,#3a383a);
+    @include whb(100%,1rem,#695343);
     border-bottom:1px solid #706251; 
     ul{
         @include whb(100%,100%,transparent);
@@ -110,15 +110,7 @@
 //  background:#CCC;
 //  text-align:center;
 //}
-#mote{
-    width:1.5rem;
-    padding:0.15rem 0.2rem;
-    position:absolute;
-    bottom:0.68rem;
-    right:0rem;
-    cursor:pointer;
-    background:#ff0000;
-}
+/*音频*/
 //#time{
 //  position:absolute;
 //  bottom:0.8rem;
@@ -141,18 +133,6 @@
     #volume{
         
     }
-}
-#progress,#volume{
-    @include whb(3rem,0.2rem,#dfdfdf);
-    margin:0.2rem auto;
-    position:relative;
-}
-
-#p-i{
-    left:-0.2rem;
-}
-#v-i{
-    right:-0.2rem;
 }
 #list{
     
@@ -184,45 +164,82 @@
     cursor:pointer;
     top:-0.15rem;
 }
+/*time 和  volume进度条属性*/
+.vol{
+    @include whb(100%,0.6rem,transparent);
+    overflow:hidden;
+    &:after{
+        @include float;
+    }
+    span{
+        display:block;
+        float:left;
+        line-height:0.66rem;
+    }
+    div{
+        float:left;
+    }
+    #volume{
+        @include whb(5.8rem,0.06rem,#dfdfdf);
+//      @include center;
+        margin:0.3rem 0rem 0rem 0.35rem;
+        position:relative;
+        #v-i{
+            right:-0.15rem; 
+            color:#796b63;
+        }
+    }
+    #vol{
+        padding-left:0.3rem;
+        color:#B8B3AE;
+    }
+}
+//歌曲快进进度条样式
+.time{
+    @include whb(100%,0.6rem,transparent);
+    &:after{
+        @include float;
+    }
+    span{
+        display:block;
+        float:left;
+        line-height:0.6rem;
+    }
+    div{
+        float:left;
+    }
+    #progress{
+        @include whb(5rem,0.06rem,#dfdfdf);
+//          @include center;
+        margin:0.3rem 0rem 0rem 0.35rem;
+        position:relative;
+        #p-i{
+            left:-0.15rem; 
+            color:#796b63;
+        }
+    }
+    #current-time{
+        padding-left:0.3rem;
+        color:#877d75;
+    }
+    #duration{
+        float:right;
+        padding-right:0.3rem;
+        color:#665551;
+    }
+}
+/*time 和  volume 属性End*/
+/*hands*/
+#hand{
+    @include whb(100%,0.2rem,red);
+}
+/*hands End*/
 /*footer*/
 #footer{
     @include whb(100%,1.6rem,transparent);
     position:fixed;
     bottom:0rem;
     z-index:1;
-    .time{
-        @include whb(100%,0.6rem,transparent);
-        &:after{
-            @include float;
-        }
-        span{
-            display:block;
-            float:left;
-            line-height:0.6rem;
-        }
-        div{
-            float:left;
-        }
-        #progress{
-            @include whb(5rem,0.06rem,#dfdfdf);
-//          @include center;
-            margin:0.3rem 0rem 0rem 0.35rem;
-            position:relative;
-            #p-i{
-                left:-0.15rem; 
-                color:#796b63;
-            }
-        }
-        #current-time{
-            padding-left:0.3rem;
-            color:#877d75;
-        }
-        #duration{
-            float:right;
-            padding-right:0.3rem;
-            color:#665551;
-        }
-    }
     //播放开始与暂停和列表页
     ul{
         @include whb(100%,1rem,transparent);

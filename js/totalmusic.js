@@ -10,6 +10,7 @@ $(document).ready(function() {
 	var vol = $("#volume");
 	var vi = $("#v-i");
 	var mote = $("#mote");
+	var volmote = $("#vol");
 	var current = 1;
 		//列表切换歌曲
 	var music = [{
@@ -172,6 +173,19 @@ $(document).ready(function() {
 	$(document).on('mouseup', function() {
 		$(document).off("mousemove");
 	});
+	//静音
+	volmote.on("click", function() {
+		if($(this).attr("data-v")) {
+			audio.volume = $(this).attr("data-v");
+			$(this).removeAttr("data-v");
+			$(this).html("&#xe625;");
+		} else {
+			$(this).attr("data-v", audio.volume);
+			$(this).html("&#xe626;");
+			audio.volume = 0;			
+		}
+	});
+	
 	//////////////////////////////所有事件
 	$audio.on("localstart", function() {
 		$("#name").html(music[current].name);
@@ -207,6 +221,7 @@ $(document).ready(function() {
 	$audio.on("ended", function() {
 
 	});
+	
 	$audio.on("volumechange", function() {
 		vi.css("left", vol.width() * audio.volume - vi.width() / 2);
 	});

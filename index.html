@@ -39,6 +39,20 @@
 			<!--controls-->
 			loop
 		></audio>
+		<!--volume-->
+		<div class="vol">
+			<!--静音-->
+			<span id="vol" class="iconfont">&#xe625;</span>
+			<div id="volume">
+				<div id="v-i"></div>
+			</div>
+		</div>
+		<!--volume End-->
+		<!--hands-->
+		<div id="hand">
+			
+		</div>
+		<!--hands End-->
 		<!--列表-->
 		<ul id="music-list">
 			
@@ -48,28 +62,9 @@
 			<div data-v='{"name":"张碧晨","src":"music/张碧晨 - 下一秒.mp3","duration":"03:14"}'>歌曲名</div>
 			<div data-v='{"name":"灵音妙合","src":"music/灵音妙合 - 相思意.mp3","duration":"05:43"}'>歌曲名</div>
 		</div>
-		<!--<div id="pause">暂停</div>-->
-		<div id="time">
-			<span id="current-time">0:00</span>
-			<span>/</span>
-			<span id="duration">3:42</span>
-		</div>
-		<!--歌曲进度条-->
-		<div id="bar">
-			<!--音频进度条-->
-			<div id="volume">
-				<div id="v-i"></div>
-			</div>
-		</div>
-		<!--静音-->
-		<div id="mote">
-			静音
-		</div>
+		<!--列表新增  End-->
 		
-		<!--上一首-->
-		<div class="pre">上一首</div>
-		<!--下一首-->
-		<div class="next">下一首</div>
+		<!---->
 		<!--歌曲信息-->
 		<div id="info">
 			<h2>歌曲信息</h2>
@@ -85,18 +80,23 @@
 				<span id="duration">3:42</span>
 			</div>
 			<ul>
+				<!--循环播放-->
 				<li class="round">
 					<a class="iconfont" href="javascript:;">&#xe67f;</a>
 				</li>
+				<!--上一首-->
 				<li class="pre">
 					<a class="iconfont" href="javascript:;">&#xe652;</a>
 				</li>
+				<!--播放-->
 				<li id="play">
 					<a class="iconfont" href="javascript:;">&#xe659;</a>
 				</li>
+				<!--下一首-->
 				<li class="next">
 					<a class="iconfont" href="javascript:;">&#xe61c;</a>
 				</li>
+				<!--点击list隐藏列表形式-->
 				<li class="list">
 					<a class="iconfont" href="javascript:;">&#xe699;</a>
 				</li>

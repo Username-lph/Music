@@ -51,7 +51,7 @@
 /*header*/
 #header{
     @include whb(100%,1rem,#3a383a);
-    border-bottom:1px solid #999; 
+    border-bottom:1px solid #706251; 
     ul{
         @include whb(100%,100%,transparent);
         &:after{
@@ -64,7 +64,7 @@
             @include whb(1rem,1rem,transparent); 
             @include textalign(0.99rem);
             a{
-                @include a(0.6rem,#fff,500);
+                @include a(0.6rem,#FEFEFE,500);
             }
         }
         .song{
@@ -76,17 +76,17 @@
                padding-top:0.2rem;
             }
             p:nth-child(1){
-                color:#fff;
+                color:#FAF9F8;
             }
             p:nth-child(2){
-                color:#ccc;
+                color:#A8A7A7;
             }
         }
         .share{
             @include whb(1rem,1rem,transparent);
             @include textalign(0.99rem);
             a{
-                @include a(0.6rem,#fff,500);
+                @include a(0.6rem,#F5F5F5,500);
             }
         }   
     }
@@ -98,18 +98,18 @@
     position:fixed;
     bottom:0rem;
 }
-#play,#pause{
-    width:1.5rem;
-    padding:0.15rem 0.2rem;
-    cursor:pointer;
-}
-#play{
-    position:absolute;
-    bottom:0rem;
-    right:0rem;
-    background:#CCC;
-    text-align:center;
-}
+//#play,#pause{
+//  width:1.5rem;
+//  padding:0.15rem 0.2rem;
+//  cursor:pointer;
+//}
+//#play{
+//  position:absolute;
+//  bottom:0rem;
+//  right:0rem;
+//  background:#CCC;
+//  text-align:center;
+//}
 #mote{
     width:1.5rem;
     padding:0.15rem 0.2rem;
@@ -119,15 +119,15 @@
     cursor:pointer;
     background:#ff0000;
 }
-#time{
-    position:absolute;
-    bottom:0.8rem;
-    right:0.3rem;
-    margin:0rem 0.8rem;
-    span{
-        padding:0.1rem;
-    }
-}
+//#time{
+//  position:absolute;
+//  bottom:0.8rem;
+//  right:0.3rem;
+//  margin:0rem 0.8rem;
+//  span{
+//      padding:0.1rem;
+//  }
+//}
 #bar{
     position:absolute;
     bottom:0.56rem;
@@ -147,13 +147,7 @@
     margin:0.2rem auto;
     position:relative;
 }
-#p-i,#v-i{
-    border-radius:50%;
-    @include whb(0.4rem,0.4rem,greenyellow);
-    position:absolute;
-    cursor:pointer;
-    top:-0.1rem;
-}
+
 #p-i{
     left:-0.2rem;
 }
@@ -182,38 +176,96 @@
 .active{
     color:#c00;
 }
-//.pre,.next{
-//  cursor:pointer;
-//  margin:1rem;
-//}
+/*进度条和音频共同属性*/
+#p-i,#v-i{
+    border-radius:50%;
+    @include whb(0.3rem,0.3rem,#dfdfdf);
+    position:absolute;
+    cursor:pointer;
+    top:-0.15rem;
+}
+/*footer*/
 #footer{
-    @include whb(100%,2rem,red);
+    @include whb(100%,1.6rem,transparent);
     position:fixed;
     bottom:0rem;
     z-index:1;
-    
+    .time{
+        @include whb(100%,0.6rem,transparent);
+        &:after{
+            @include float;
+        }
+        span{
+            display:block;
+            float:left;
+            line-height:0.6rem;
+        }
+        div{
+            float:left;
+        }
+        #progress{
+            @include whb(5rem,0.06rem,#dfdfdf);
+//          @include center;
+            margin:0.3rem 0rem 0rem 0.35rem;
+            position:relative;
+            #p-i{
+                left:-0.15rem; 
+                color:#796b63;
+            }
+        }
+        #current-time{
+            padding-left:0.3rem;
+            color:#877d75;
+        }
+        #duration{
+            float:right;
+            padding-right:0.3rem;
+            color:#665551;
+        }
+    }
+    //播放开始与暂停和列表页
     ul{
-        @include whb(100%,1rem,green);
+        @include whb(100%,1rem,transparent);
         &:after{
             @include float;
         }
         li{
             float:left;
-            padding-right:0.6rem;
+            padding:0rem 0.5rem 0rem 0.3rem;
+            @include textalign(1rem);
         }
         .round{
             a{
-                @include a(0.5rem,#fff,500);
+                @include a(0.4rem,#ada8a3,500);
             }
+        }
+        li:nth-child(2){
+            margin-left:0.3rem;
         }
         .pre{
             a{
-                @include a(0.5rem,#fff,500);
+                @include a(0.6rem,#D4D2D0,500);
             }
         }
         #play{
             a{
-                @include a(0.5rem,#fff,500);
+                @include a(0.9rem,#d4d1d0,500);
+            }
+        }
+        li:nth-child(4){
+            margin-right:0.1rem;
+        }
+        .next{
+            a{
+                @include a(0.6rem,#D4D2D0,500);
+            }
+        }
+        li:nth-child(5){
+            margin-left:0.2rem;
+        }
+        .list{
+            a{
+                @include a(0.4rem,#A7A3A0,500);
             }
         }
     }

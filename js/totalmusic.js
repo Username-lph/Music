@@ -190,7 +190,7 @@ $(document).ready(function() {
 		pi.css("left", left);
 	});
 	//播放和暂停
-	play.on("click", function() {
+	play.on("click","a",function() {
 		if(audio.paused) {
 			audio.play();
 		} else {
@@ -198,10 +198,10 @@ $(document).ready(function() {
 		}
 	});
 	$audio.on("play", function() {
-		play.html("暂停");
+		$("#play a").html("&#xe65a;");
 	});
 	$audio.on("pause", function() {
-		play.html("播放");
+		$("#play a").html("&#xe659;");
 	});
 	$audio.on('ended', next);
 	$audio.on("ended", function() {

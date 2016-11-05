@@ -17,11 +17,26 @@
 		<link rel="stylesheet" href="./css/music.css" />
 	</head>
 	<body>
-		<div class="header"></div>
+		<div id="header">
+			<ul>
+				<li class="back">
+					<a class="iconfont" href="javascript:;">&#xe72f;</a>
+				</li>
+				<li class="song">
+					<div>
+						<p>不该让你等太久</p>
+						<p>巫启贤</p>
+					</div>
+				</li>
+				<li class="share">
+					<a class="iconfont" href="javascript">&#xe899;</a>
+				</li>
+			</ul>
+		</div>
 		<!--audio-->
 		<!--controls autoplay loop-->
-		<audio id="audio" src="music/黄国伦 - 直到世界都哭泣.mp3" 
-			controls
+		<audio id="audio" src="music/陈小春 - 独家记忆.mp3" 
+			<!--controls-->
 			loop
 		></audio>
 		<!--列表-->
@@ -30,25 +45,26 @@
 		</ul>
 		<!--列表新增-->
 		<div class="song-list">
-			<div data-v='{"name":"a","src":"1","duration":"1"}'>歌曲名</div>
-			<div data-v='{"name":"a","src":"1","duration":"1"}'>歌曲名</div>
+			<div data-v='{"name":"张碧晨","src":"music/张碧晨 - 下一秒.mp3","duration":"03:14"}'>歌曲名</div>
+			<div data-v='{"name":"灵音妙合","src":"music/灵音妙合 - 相思意.mp3","duration":"05:43"}'>歌曲名</div>
 		</div>
-		<div id="play">播放</div>
 		<!--<div id="pause">暂停</div>-->
 		<div id="time">
 			<span id="current-time">0:00</span>
 			<span>/</span>
 			<span id="duration">3:42</span>
 		</div>
-		
+		<!--歌曲进度条-->
 		<div id="bar">
 			<div id="progress">
 				<div id="p-i"></div>
 			</div>
+			<!--音频进度条-->
 			<div id="volume">
 				<div id="v-i"></div>
 			</div>
 		</div>
+		<!--静音-->
 		<div id="mote">
 			静音
 		</div>
@@ -62,6 +78,29 @@
 			<h2>歌曲信息</h2>
 			<h3 id="name"></h3>
 			<h3 id="total"></h3>
+		</div>
+		<div id="footer">
+			<div id="progress">
+				<div id="p-i"></div>
+			</div>
+			<ul>
+				<li class="round">
+					<a class="iconfont" href="javascript:;">&#xe67f;</a>
+				</li>
+				<li class="pre">
+					<a class="iconfont" href="javascript:;">&#xe652;</a>
+				</li>
+				<li id="play">
+					<a class="iconfont" href="javascript:;">&#xe659;</a>
+				</li>
+				<li class="next">
+					<a class="iconfont" href="javascript:;">&#xe61c;</a>
+				</li>
+				<li class="list">
+					<a class="iconfont" href="javascript:;">&#xe63d;</a>
+				</li>
+			</ul>
+			<!--<div id="play">播放</div>-->
 		</div>
 	</body>
 </html>

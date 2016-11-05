@@ -1,4 +1,17 @@
+//引入_main.scss里面的内容
 @import "main";
+//引入字体图标
+@font-face {
+    font-family: 'iconfont';  /* project id："174447" */
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont";
+}
 //定义宏
 @mixin top-bottom{
     position:absolute;
@@ -19,9 +32,64 @@
     height:$height;
     background:$background;
 }
+//处理浮动带来的影响
+@mixin float{
+    content:"";
+    display:block;
+    clear:both;
+}
+//用textalign控制左右和上下居中
+@mixin textalign($line-height){
+    text-align:center;
+    line-height:$line-height;
+}
+@mixin a($font-size,$color,$font-weight){
+    font-size:$font-size;
+    color:$color;
+    font-weight:$font-weight;
+}
 /*header*/
-.header{
-    @include whb(100%,1rem,#ff0000);
+#header{
+    @include whb(100%,1rem,#3a383a);
+    border-bottom:1px solid #999; 
+    ul{
+        @include whb(100%,100%,transparent);
+        &:after{
+            @include float;
+        }
+        li{
+            float:left;
+        }
+        .back{
+            @include whb(1rem,1rem,transparent); 
+            @include textalign(0.99rem);
+            a{
+                @include a(0.6rem,#fff,500);
+            }
+        }
+        .song{
+            @include whb(5.5rem,100%,transparent);
+            padding-left:0.2rem;
+            div{
+               @include whb(5rem,auto,transparent);
+               text-align:left;
+               padding-top:0.2rem;
+            }
+            p:nth-child(1){
+                color:#fff;
+            }
+            p:nth-child(2){
+                color:#ccc;
+            }
+        }
+        .share{
+            @include whb(1rem,1rem,transparent);
+            @include textalign(0.99rem);
+            a{
+                @include a(0.6rem,#fff,500);
+            }
+        }   
+    }
 }
 /*audio*/
 #audio{
@@ -43,7 +111,7 @@
     text-align:center;
 }
 #mote{
-    widht:1.5rem;
+    width:1.5rem;
     padding:0.15rem 0.2rem;
     position:absolute;
     bottom:0.68rem;
@@ -114,7 +182,39 @@
 .active{
     color:#c00;
 }
-.pre,.next{
-    cursor:pointer;
-    margin:1rem;
+//.pre,.next{
+//  cursor:pointer;
+//  margin:1rem;
+//}
+#footer{
+    @include whb(100%,2rem,red);
+    position:fixed;
+    bottom:0rem;
+    z-index:1;
+    
+    ul{
+        @include whb(100%,1rem,green);
+        &:after{
+            @include float;
+        }
+        li{
+            float:left;
+            padding-right:0.6rem;
+        }
+        .round{
+            a{
+                @include a(0.5rem,#fff,500);
+            }
+        }
+        .pre{
+            a{
+                @include a(0.5rem,#fff,500);
+            }
+        }
+        #play{
+            a{
+                @include a(0.5rem,#fff,500);
+            }
+        }
+    }
 }

@@ -3,7 +3,6 @@ $(document).ready(function() {
 	var $audio = $("#audio");
 	var audio = $audio.get(0);
 	var play = $("#play");
-	var pause = $("#pause");
 	var curTime = $("#current-time");
 	var duration = $("#duration");
 	var progress = $("#progress");
@@ -37,7 +36,7 @@ $(document).ready(function() {
 	$(audio).on("canplay", function() {
 		duration.html(format(audio.duration));
 	})
-
+	//渲染
 	function render() {
 		$("#music-list").empty();
 		$.each(music, function(i, v) {
@@ -53,50 +52,6 @@ $(document).ready(function() {
 		audio.play();
 	});
 	render();
-	//播放和暂停
-	play.on("click", function() {
-		if(audio.paused) {
-			audio.play();
-		} else {
-			audio.pause();
-		}
-	});
-	$(audio).on("play", function() {
-		play.html("暂停");
-	});
-	$(audio).on("pause", function() {
-		play.html("播放");
-	});
-	//歌曲播放过程中调用的函数
-	$(audio).on("timeupdate", function() {
-		curTime.html(format(audio.currentTime));
-		var left = progress.width() * audio.currentTime / audio.duration - pi.width() / 2;
-		pi.css("left", left);
-	});
-	//歌曲进度条点击
-	progress.on('click', function(e) {
-		audio.currentTime = e.offsetX / $(this).width() * audio.duration;
-	});
-	pi.on('click', false);
-	// duration.html=format(audio.duration);	
-	//歌曲进度拖拽
-	pi.on('mousedown', function(e) {
-		var r = pi.width() / 2;
-		var start = r - e.offsetX;
-		//		var start=e.offsetX;
-		$(document).on('mousemove', function(e) {
-			var left = e.clientX - progress.position().left + start;
-			var c = left / progress.width() * audio.duration;
-			if(c >= audio.duration || c <= 0) {
-				return;
-			}
-			audio.currentTime = c;
-		});
-		return false;
-	});
-	$(document).on('mouseup', function() {
-		$(document).off("mousemove");
-	});
 	
 	//列表删除
 	$("#music-list").on("touched", ".delete", function() {
@@ -111,7 +66,7 @@ $(document).ready(function() {
 			}
 		} else if(index > current) {
 			//
-		} else if(iindex < current) {
+		} else if(index < current) {
 			current -= 1;
 		}
 		render();
@@ -140,6 +95,7 @@ $(document).ready(function() {
 		}
 		audio.src = music[current].src;
 		render();
+		audio.play();
 		return false;
 	}
 	//下一首
@@ -150,10 +106,37 @@ $(document).ready(function() {
 		}
 		audio.src = music[current].src;
 		render();
+		audio.play();
 		return false;
 	}
 	$(".pre").on("touchend", prev);
 	$(".next").on("touchend", next);
+	
+	//歌曲进度条点击
+	progress.on('click', function(e) {
+		audio.currentTime = e.offsetX / $(this).width() * audio.duration;
+	});
+	pi.on('click', false);
+	// duration.html=format(audio.duration);	
+	//歌曲进度拖拽
+	pi.on('mousedown', function(e) {
+		var r = pi.width() / 2;
+		var start = r - e.offsetX;
+		//		var start=e.offsetX;
+		$(document).on('mousemove', function(e) {
+			var left = e.clientX - progress.position().left + start;
+			var c = left / progress.width() * audio.duration;
+			if(c >= audio.duration || c <= 0) {
+				return;
+			}
+			audio.currentTime = c;
+		});
+		return false;
+	});
+	$(document).on('mouseup', function() {
+		$(document).off("mousemove");
+	});
+	
 	//音频拖拽
 //	vi.on("mousedown", function(e) {
 //		//		e.preventDefault();
@@ -189,25 +172,36 @@ $(document).ready(function() {
 	$(document).on('mouseup', function() {
 		$(document).off("mousemove");
 	});
-	///////所有事件
+	//////////////////////////////所有事件
 	$audio.on("localstart", function() {
 		$("#name").html(music[current].name);
 		$("#total").html(music[current].src);
 	});
-	$audio.on("complay", function() {
-
+	$audio.on("canplay", function() {
+		
 	});
 	$audio.on("progress", function() {
 
 	});
+	//歌曲播放过程中调用的函数
 	$audio.on("timeupdate", function() {
-
+		curTime.html(format(audio.currentTime));
+		var left = progress.width() * audio.currentTime / audio.duration - pi.width() / 2;
+		pi.css("left", left);
+	});
+	//播放和暂停
+	play.on("click", function() {
+		if(audio.paused) {
+			audio.play();
+		} else {
+			audio.pause();
+		}
 	});
 	$audio.on("play", function() {
-
+		play.html("暂停");
 	});
 	$audio.on("pause", function() {
-
+		play.html("播放");
 	});
 	$audio.on('ended', next);
 	$audio.on("ended", function() {

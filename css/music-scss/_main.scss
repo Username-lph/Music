@@ -2,9 +2,13 @@
     margin:0px;
     padding:0px;
     box-sizing:border-box;
+    position:relative;
 }
 ul li{
     list-style:none;
+}
+a{
+    text-decoration:none;
 }
 $d-list:320px,360px,375px,384px,412px,414px,510px,600px,640px,768px,800px,1600px,1440px;
 html{
@@ -13,7 +17,7 @@ html{
 body{
     font-size:16px;
 //  background-image:url(../images/todo.jpg);
-    background:#fff;
+    background:#3a3a3a;
     font-family:"微软雅黑"；
 }
 $design-size:750px;

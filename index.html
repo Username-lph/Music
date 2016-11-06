@@ -29,13 +29,13 @@
 					</div>
 				</li>
 				<li class="share">
-					<a class="iconfont" href="javascript">&#xe899;</a>
+					<a class="iconfont" href="javascript:;">&#xe899;</a>
 				</li>
 			</ul>
 		</div>
 		<!--audio-->
 		<!--controls autoplay loop-->
-		<audio id="audio" src="music/陈小春 - 独家记忆.mp3" 
+		<audio id="audio" src="music/巫启贤 - 不该让你等太久.mp3" 
 			<!--controls-->
 			loop
 		></audio>
@@ -48,29 +48,66 @@
 			</div>
 		</div>
 		<!--volume End-->
-		<!--hands-->
-		<div id="hand">
-			
+		<!--歌词info和content-rotate互相切换功能-->
+		<!--歌词info-->
+		<div id="content"></div>
+		<!--歌词info End-->
+		<div id="content-rotate">
+			<!--hands-->
+			<div id="hand">
+				<a href="javascript:;">
+					<img class="" src="./images/hands.png" alt="" />
+				</a>
+			</div>
+			<!--hands End-->
+			<!--rotate-->
+			<div id="rotate">
+				<a class="rotate" href="javascript:;"></a>
+				<a class="rotate-img" href="javascript:;"></a>
+			</div>
+			<!--rotate End-->
+			<!--collect-->
+			<div id="collect">
+				<ul>
+					<li>
+						<a href="javascript" class="first iconfont">&#xe628;</a>
+					</li>
+					<li>
+						<a href="javascript" class="iconfont">&#xe651;</a>
+					</li>
+					<li>
+						<a href="javascript" class="iconfont">&#xe642;</a>
+					</li>
+					<li>
+						<a href="javascript" class="iconfont">&#xe601;</a>
+					</li>
+				</ul>
+			</div>
+			<!--collect End-->
 		</div>
-		<!--hands End-->
+		<!--歌词info和content-rotate互相切换功能  End-->
 		<!--列表-->
-		<ul id="music-list">
+		<!--<ul id="music-list">
 			
-		</ul>
+		</ul>-->
 		<!--列表新增-->
-		<div class="song-list">
+		<!--<div class="song-list">
 			<div data-v='{"name":"张碧晨","src":"music/张碧晨 - 下一秒.mp3","duration":"03:14"}'>歌曲名</div>
 			<div data-v='{"name":"灵音妙合","src":"music/灵音妙合 - 相思意.mp3","duration":"05:43"}'>歌曲名</div>
-		</div>
+		</div>-->
 		<!--列表新增  End-->
 		
-		<!---->
-		<!--歌曲信息-->
-		<div id="info">
+		<!--歌曲info-->
+		<!--<div id="info">
 			<h2>歌曲信息</h2>
 			<h3 id="name"></h3>
 			<h3 id="total"></h3>
-		</div>
+		</div>-->
+		<!--info End-->
+		
+		<!--list-->
+		<!--<div id="list"></div>-->
+		<!--footer-->
 		<div id="footer">
 			<div class="time">
 				<span id="current-time">0:00</span>

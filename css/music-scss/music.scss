@@ -53,10 +53,10 @@
     @include whb(100%,100%,transparent);
     background-size:cover;
     @include center;
-//  img{
-//      width:37.5rem;
-//      height:100%;
-//  }
+    img{
+        width:37.5rem;
+        height:100%;
+    }
     a{
         display:block;
         @include whb(100%,100%,url(../images/yr.jpg));

@@ -127,6 +127,11 @@ body {
   margin: auto;
 }
 
+#music-sp img {
+  width: 37.5rem;
+  height: 100%;
+}
+
 #music-sp a {
   display: block;
   width: 100%;

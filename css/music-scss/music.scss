@@ -48,6 +48,11 @@
     color:$color;
     font-weight:$font-weight;
 }
+/*audio-play*/
+#audio-play{
+    @include whb(100%,100%,red);
+    @include center;
+}
 /*header*/
 #header{
     @include whb(100%,1rem,#695343);
@@ -70,10 +75,16 @@
         .song{
             @include whb(5.5rem,100%,transparent);
             padding-left:0.2rem;
+            position:relative;
             div{
                @include whb(5rem,auto,transparent);
                text-align:left;
                padding-top:0.2rem;
+               position:absolute;
+               top:0rem;
+               .author{
+                   text-align:left;
+               }
             }
             p:nth-child(1){
                 color:#FAF9F8;

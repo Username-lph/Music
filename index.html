@@ -1,91 +1,134 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width"/>
-	<!-- Add to homescreen for Safari on Ios -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-title" content="music">
-	<link rel="apple-touch-icon" href="./images/logo1.png">
-	<!-- Add to homescreen for Chrome on Android -->
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="application-name" content="music">
-	<meta name="theme-color" content="#2F3BA2">
-	<link rel="icon" sizes="192x192" href="./images/logo1.png">
+		<meta name="viewport" content="width=device-width" />
+		<!-- Add to homescreen for Safari on Ios -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="music">
+		<link rel="apple-touch-icon" href="./images/logo1.png">
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="music">
+		<meta name="theme-color" content="#2F3BA2">
+		<link rel="icon" sizes="192x192" href="./images/logo1.png">
 		<title>music</title>
 		<link rel="stylesheet" href="./css/music.css" />
 	</head>
+
 	<body>
-		<div id="header">
-			<ul>
-				<li class="back">
-					<a class="iconfont" href="javascript:;">&#xe72f;</a>
-				</li>
-				<li class="song">
-					<div>
-						<p>不该让你等太久</p>
-						<p>巫启贤</p>
-					</div>
-				</li>
-				<li class="share">
-					<a class="iconfont" href="javascript:;">&#xe899;</a>
-				</li>
-			</ul>
+		<!--audio music-list-->
+		<div id="audio-list">
+			
 		</div>
-		<!--audio-->
-		<!--controls autoplay loop-->
-		<audio id="audio" src="music/巫启贤 - 不该让你等太久.mp3" 
-			<!--controls-->
-			loop
-		></audio>
-		<!--volume-->
-		<div class="vol">
-			<!--静音-->
-			<span id="vol" class="iconfont">&#xe625;</span>
-			<div id="volume">
-				<div id="v-i"></div>
-			</div>
-		</div>
-		<!--volume End-->
-		<!--歌词info和content-rotate互相切换功能-->
-		<!--歌词info-->
-		<div id="content"></div>
-		<!--歌词info End-->
-		<div id="content-rotate">
-			<!--hands-->
-			<div id="hand">
-				<a href="javascript:;">
-					<img class="" src="./images/hands.png" alt="" />
-				</a>
-			</div>
-			<!--hands End-->
-			<!--rotate-->
-			<div id="rotate">
-				<a class="rotate" href="javascript:;"></a>
-				<a class="rotate-img" href="javascript:;"></a>
-			</div>
-			<!--rotate End-->
-			<!--collect-->
-			<div id="collect">
+		<!--audio music-list End-->
+		<!--audio-play-->
+		<div id="audio-play">
+			<div id="header">
 				<ul>
-					<li>
-						<a href="javascript" class="first iconfont">&#xe628;</a>
+					<li class="back">
+						<a class="iconfont" href="javascript:;">&#xe72f;</a>
 					</li>
-					<li>
-						<a href="javascript" class="iconfont">&#xe651;</a>
+					<li class="song">
+						<div>
+							<p>不该让你等太久</p>
+							<p>巫启贤</p>
+						</div>
 					</li>
-					<li>
-						<a href="javascript" class="iconfont">&#xe642;</a>
-					</li>
-					<li>
-						<a href="javascript" class="iconfont">&#xe601;</a>
+					<li class="share">
+						<a class="iconfont" href="javascript:;">&#xe899;</a>
 					</li>
 				</ul>
 			</div>
-			<!--collect End-->
+			<!--audio-->
+			<!--controls autoplay loop-->
+			<audio id="audio" src="music/巫启贤 - 不该让你等太久.mp3" <!--controls-->
+				loop >
+			</audio>
+			<!--volume-->
+			<div class="vol">
+				<!--静音-->
+				<span id="vol" class="iconfont">&#xe625;</span>
+				<div id="volume">
+					<div id="v-i"></div>
+				</div>
+			</div>
+			<!--volume End-->
+			<!--歌词info和content-rotate互相切换功能-->
+			<!--歌词info-->
+			<div id="content"></div>
+			<!--歌词info End-->
+			<div id="content-rotate">
+				<!--hands-->
+				<div id="hand">
+					<a href="javascript:;">
+						<img class="" src="./images/hands.png" alt="" />
+					</a>
+				</div>
+				<!--hands End-->
+				<!--rotate-->
+				<div id="rotate">
+					<a class="rotate" href="javascript:;"></a>
+					<a class="rotate-img" href="javascript:;"></a>
+				</div>
+				<!--rotate End-->
+				<!--collect-->
+				<div id="collect">
+					<ul>
+						<li>
+							<a href="javascript" class="first iconfont">&#xe628;</a>
+						</li>
+						<li>
+							<a href="javascript" class="iconfont">&#xe651;</a>
+						</li>
+						<li>
+							<a href="javascript" class="iconfont">&#xe642;</a>
+						</li>
+						<li>
+							<a href="javascript" class="iconfont">&#xe601;</a>
+						</li>
+					</ul>
+				</div>
+				<!--collect End-->
+			</div>
+			<!--歌词info和content-rotate互相切换功能  End-->
+			<!--footer-->
+			<div id="footer">
+				<div class="time">
+					<span id="current-time">0:00</span>
+					<div id="progress">
+						<div id="p-i"></div>
+					</div>
+					<span id="duration">3:42</span>
+				</div>
+				<ul>
+					<!--循环播放-->
+					<li class="round">
+						<a class="iconfont" href="javascript:;">&#xe67f;</a>
+					</li>
+					<!--上一首-->
+					<li class="pre">
+						<a class="iconfont" href="javascript:;">&#xe652;</a>
+					</li>
+					<!--播放-->
+					<li id="play">
+						<a class="iconfont" href="javascript:;">&#xe659;</a>
+					</li>
+					<!--下一首-->
+					<li class="next">
+						<a class="iconfont" href="javascript:;">&#xe61c;</a>
+					</li>
+					<!--点击list隐藏列表形式-->
+					<li class="list">
+						<a class="iconfont" href="javascript:;">&#xe699;</a>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<!--歌词info和content-rotate互相切换功能  End-->
+		<!--audio-play End-->
+		
 		<!--列表-->
 		<!--<ul id="music-list">
 			
@@ -96,7 +139,7 @@
 			<div data-v='{"name":"灵音妙合","src":"music/灵音妙合 - 相思意.mp3","duration":"05:43"}'>歌曲名</div>
 		</div>-->
 		<!--列表新增  End-->
-		
+
 		<!--歌曲info-->
 		<!--<div id="info">
 			<h2>歌曲信息</h2>
@@ -104,43 +147,12 @@
 			<h3 id="total"></h3>
 		</div>-->
 		<!--info End-->
-		
+
 		<!--list-->
 		<!--<div id="list"></div>-->
-		<!--footer-->
-		<div id="footer">
-			<div class="time">
-				<span id="current-time">0:00</span>
-				<div id="progress">
-					<div id="p-i"></div>
-				</div>
-				<span id="duration">3:42</span>
-			</div>
-			<ul>
-				<!--循环播放-->
-				<li class="round">
-					<a class="iconfont" href="javascript:;">&#xe67f;</a>
-				</li>
-				<!--上一首-->
-				<li class="pre">
-					<a class="iconfont" href="javascript:;">&#xe652;</a>
-				</li>
-				<!--播放-->
-				<li id="play">
-					<a class="iconfont" href="javascript:;">&#xe659;</a>
-				</li>
-				<!--下一首-->
-				<li class="next">
-					<a class="iconfont" href="javascript:;">&#xe61c;</a>
-				</li>
-				<!--点击list隐藏列表形式-->
-				<li class="list">
-					<a class="iconfont" href="javascript:;">&#xe699;</a>
-				</li>
-			</ul>
-			<!--<div id="play">播放</div>-->
-		</div>
+
 	</body>
+
 </html>
 <script type="text/javascript" scr="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>

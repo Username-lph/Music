@@ -113,6 +113,19 @@ body {
   font-family: "iconfont";
 }
 
+/*audio-play*/
+#audio-play {
+  width: 100%;
+  height: 100%;
+  background: red;
+  position: absolute;
+  top: 0rem;
+  bottom: 0rem;
+  left: 0rem;
+  right: 0rem;
+  margin: auto;
+}
+
 /*header*/
 #header {
   width: 100%;
@@ -156,6 +169,7 @@ body {
   height: 100%;
   background: transparent;
   padding-left: 0.2rem;
+  position: relative;
 }
 
 #header ul .song div {
@@ -164,6 +178,12 @@ body {
   background: transparent;
   text-align: left;
   padding-top: 0.2rem;
+  position: absolute;
+  top: 0rem;
+}
+
+#header ul .song div .author {
+  text-align: left;
 }
 
 #header ul .song p:nth-child(1) {

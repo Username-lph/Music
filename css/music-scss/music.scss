@@ -54,13 +54,14 @@
     background-size:cover;
     @include center;
     img{
-        width:37.5rem;
-        height:100%;
+        width:7.5rem;
+        height:12.2rem;
+        z-index:10;
     }
-    a{
-        display:block;
-        @include whb(100%,100%,url(../images/yr.jpg));
-    }
+//  a{
+//      display:block;
+//      @include whb(100%,100%,url(../images/yr.jpg));
+//  }
 }
 /*audio music-sp End*/
 /*audio-list*/

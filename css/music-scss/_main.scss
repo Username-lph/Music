@@ -17,8 +17,9 @@ html{
 body{
     font-size:16px;
 //  background-image:url(../images/todo.jpg);
-    background:#572e21;
-    font-family:"微软雅黑"；
+//  background:transparent;
+    font-family:"微软雅黑";
+    position:relative;
 }
 $design-size:750px;
 @each $w in $d-list{

@@ -48,10 +48,126 @@
     color:$color;
     font-weight:$font-weight;
 }
+/*audio music-sp*/
+#music-sp{
+    @include whb(100%,100%,transparent);
+    background-size:cover;
+    @include center;
+//  img{
+//      width:37.5rem;
+//      height:100%;
+//  }
+    a{
+        display:block;
+        @include whb(100%,100%,url(../images/yr.jpg));
+    }
+}
+/*audio music-sp End*/
+/*audio-list*/
+#audio-list{
+    @include whb(100%,100%,#F2F4F5);
+    &:after{
+        @include float;
+    }
+    display:none;
+}
+.header{
+    @include whb(100%,1rem,#CE3D3E);
+    &:after{
+        @include float;
+    }
+    ul{
+        @include whb(100%,100%,transparent);
+        &:after{
+            @include float;
+        }
+        li{
+            float:left;
+        }
+        .back{
+            @include whb(1rem,1rem,transparent); 
+            @include textalign(0.99rem);
+            a{
+                @include a(0.45rem,#FEFEFE,500);
+            }
+        }
+        .logo{
+            @include whb(5.5rem,100%,transparent);
+        }
+        .share{
+            @include whb(1rem,1rem,transparent);
+            @include textalign(0.99rem);
+            a{
+                @include a(0.6rem,#F5F5F5,500);
+            }
+        }
+    }
+}
+/*header End*/
+/*music-list*/
+#music-list{
+    &:after{
+        @include float;
+    }
+}
+#music-list li{
+    @include whb(80%,0.6rem,transparent);
+    margin:0.08rem 0rem 0.15rem 0.3rem;
+    list-style:none;
+    cursor:pointer;
+    border-bottom:1px solid #dfdfdf;
+    line-height:0.3rem;
+}
+#music-list li span{
+    padding:0.1rem;
+    float:left;
+    display:inline-block;
+}
+#music-list li span:nth-child(1){
+    margin-right:0.2rem;
+}
+.author,.delete{
+    display:inline-block;
+    @include whb(0.3rem,0.3rem,transparent);
+    position:absolute;
+    right:0.2rem;
+}
+.active{
+    color:#c00;
+}
+/*music-list End*/
+/*song-list*/
+.song-list{
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+    div{
+        @include whb(0.5rem,0.5rem,#dfdfdf);
+        border-radius:50%;
+        line-height:0.4rem;
+        text-align:center;
+        color:#FF0000;
+        font-size:0.5rem;
+        cursor:pointer;
+        position:fixed;
+        right:0.2rem;
+        top:1.1rem;
+    }
+}
+/*song-list End*/
+
+/*audio-list End*/
 /*audio-play*/
 #audio-play{
-    @include whb(100%,100%,red);
-    @include center;
+    @include whb(100%,100%,#572e21);
+//  @include center;
+    z-index:0;
+    &:after{
+        @include float;
+    }
+//  display:none;
 }
 /*header*/
 #header{
@@ -91,6 +207,7 @@
             }
             p:nth-child(2){
                 color:#A8A7A7;
+                font-size:12px;               
             }
         }
         .share{
@@ -104,35 +221,10 @@
 }
 /*audio*/
 #audio{
-//  width:90%;
     margin:0rem auto;
     position:fixed;
     bottom:0rem;
 }
-/*music-list*/
-#list{
-    
-}
-#list li{
-    padding-left:15px;
-    margin:15px;
-    list-style:none;
-    cursor:pointer;
-    /*background:red;*/
-}
-/*#list li{
-    color:#383838;
-}*/
-#list li span{
-    padding:15px;
-}
-.author{
-    text-align:right;
-}
-.active{
-    color:#c00;
-}
-/*music-list End*/
 /*进度条和音频共同属性*/
 #p-i,#v-i{
     border-radius:50%;
@@ -188,7 +280,7 @@
     }
     #progress{
         @include whb(5rem,0.06rem,#dfdfdf);
-//          @include center;
+//      @include center;
         margin:0.3rem 0rem 0.2rem 0.35rem;
         position:relative;
         #p-i{
@@ -209,9 +301,9 @@
 /*time 和  volume 属性End*/
 /*hands*/
 #hand{
-    @include whb(6.99rem,auto,transparent);
+    @include whb(6.99rem,1.56rem,transparent);
     padding-left:3.82rem;    
-    overflow:hidden; 
+//  overflow:hidden; 
     z-index:200;
 //  display:none;
     a{
@@ -221,26 +313,29 @@
         img{
             width:2.19rem;
             height:1.56rem;
-//          transition:all 8s ease-in-out 0s;
-            transform-origin:center top;
+            transform-origin:left top;
 //          transform:rotateX(0deg);
+            transition:transform 2s ease-in-out 0s;
+            position:absolute;
+            top:0rem;
             z-index:222;         
         }
-    }
-//  a:hover img{
-//      transform:rotateX(30deg);
-//  }    
+    } 
 }
 /*动画*/
 .hand{
-    animation:hand 1s linear 0s running;  
+//  animation:hand 2s linear 0s ;
+    transform:rotateZ(36deg);  
 }
 @keyframes hand{
     0%{
        transform:rotateZ(0deg);
     }
+    50%{
+       transform:rotateZ(30deg);    
+    }
     100%{
-       transform:rotateZ(30deg);
+       transform:rotateZ(0deg);
     }
 }
 /*rotate rotate-img动画*/
@@ -265,14 +360,16 @@
 }
 /*歌词info*/
 #content{
-    @include whb(100%,9rem,transparent);
+    @include whb(100%,10rem,#572e21);
     display:none;
     overflow:hidden;
+    padding:1rem auto 1.5rem;
     position:relative;
     .content{
         @include whb(100%,auto,transparent);
         position:absolute;
-        top:2rem;
+        top:3rem;
+        padding-bottom:2rem;
         overflow:hidden;
         li{
             @include whb(100%,auto,transparent);
@@ -309,7 +406,7 @@
 }
 /*歌词info End*/
 #content-rotate{
-    @include whb(100%,auto,transparent);
+    @include whb(100%,auto,#572e21);
     position:absolute;
     top:1rem;
     &after{
@@ -342,8 +439,9 @@
 /*rotate End*/
 /*collect*/
 #collect{    
-    @include whb(100%,1rem,transparent);
+    @include whb(100%,1rem,#572e21);
     margin:1.5rem auto 0rem;
+    padding:1rem 0rem 0.5rem;
     ul{
         margin:0rem 0.6rem;
         &:after{
@@ -415,13 +513,18 @@ body{
 /*list End*/
 /*footer*/
 #footer{
-    @include whb(100%,1.8rem,transparent);
+    @include whb(100%,1.9rem,#572e21);
     position:fixed;
-    bottom:0.3rem;
+    bottom:0rem;
+    padding-bottom:0.3rem;
+    padding-top:0.02rem;
     z-index:1;
     //播放开始与暂停和列表页
     ul{
         @include whb(100%,1rem,transparent);
+        position:absolute;
+        bottom:0.11rem;
+        padding-bottom:0.2rem;
         &:after{
             @include float;
         }
